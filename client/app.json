@@ -1,0 +1,35 @@
+{
+  "expo": {
+    "name": "WF",
+    "slug": "WF",
+    "version": "1.0.0",
+    "orientation": "landscape & portrait",
+    "icon": "./Cab/Driver/assets/icon.png",
+    "splash": {
+      "image": "./Cab/Driver/assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./Cab/Driver/assets/adaptive-icon.png",
+        "backgroundColor": "#FFFFFF"
+      }
+    },
+    "web": {
+      "favicon": "./Cab/Driver/assets/favicon.png"
+    },
+    "extra": {
+      "env": "http://192.168.43.36:4000"
+    }
+  }
+}
