@@ -12,8 +12,8 @@ import EditProfileScreen from './EditProfileScreen';
 import { useTheme, Avatar } from 'react-native-paper';
 import { View } from 'react-native-animatable';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import CardListScreen from './CardListScreen';
-import CardItemDetails from './CardItemDetails';
+import DriversListScreen from './DriversListScreen';
+import DriverDetail from './DriverDetail';
 import { _retrieveData } from '../../components/_Asyncstorage';
 import { useSelector } from "react-redux";
 import { selectAdmin } from '../slices/navSlice';
@@ -70,28 +70,6 @@ const MainTabScreen = (props) => (
         ),
       }}
     />
-    {/* <Tab.Screen
-      name="SelectScreen"
-      component={SelectScreen}
-      options={{
-        tabBarLabel: 'Exit',
-        tabBarColor: '#d02860',
-        tabBarIcon: ({ color }) => (
-          <Icon name="ios-exit" color={color} size={26} />
-        ),
-      }}
-    /> */}
-    {/* <Tab.Screen
-      name="RMS"
-      component={RideandMapScreen}
-      options={{
-        tabBarLabel: 'RMS',
-        tabBarColor: '#d02860',
-        tabBarIcon: ({ color }) => (
-          <Icon name="ios-car" color={color} size={26} />
-        ),
-      }}
-    /> */}
   </Tab.Navigator>
 );
 export default MainTabScreen;
@@ -156,22 +134,21 @@ const HomeStackScreen = ({ navigation }) => {
         }}
       />
       <HomeStack.Screen
-        name="CardListScreen"
-        component={CardListScreen}
+        name="DriversListScreen"
+        component={DriversListScreen}
         options={({ route }) => ({
           title: route.params.title,
           headerBackTitleVisible: false
         })}
       />
       <HomeStack.Screen
-        name="CardItemDetails"
-        component={CardItemDetails}
+        name="DriverDetail"
+        component={DriverDetail}
         options={({ route }) => ({
           title: route.params.title,
-          headerBackTitleVisible: false,
-         // headerTitle: false,
-          headerTransparent: true,
-          headerTintColor: '#fff',
+          // headerBackTitleVisible: false,
+          // headerTransparent: true,
+          // headerTintColor: '#fff',
           //headerShown: false
         })}
       />

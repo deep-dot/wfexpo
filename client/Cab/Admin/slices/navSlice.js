@@ -11,9 +11,8 @@ export const slice4admin = createSlice({
   reducers: {
     setLoading: (state, action) => { state.loading = action.payload },
     setAdmin: (state, action) => { 
-      //console.log(' clicked', action.payload)
       state.admin = action.payload
-      console.log('admin in navslice===', state.admin, state.loading)
+     // console.log('admin in navslice===', state.admin, state.loading)
      },    
   },
 });

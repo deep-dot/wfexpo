@@ -23,7 +23,7 @@ import { useSelector } from 'react-redux';
 
 export function DrawerContent(props) {
     const admin = useSelector(selectAdmin);
-    console.log('admin in home screen',admin)
+   // console.log('admin in drawer content',admin)
 
     const paperTheme = useTheme();
     const { logoutAdmin, toggleTheme } = useContext(AuthContext);

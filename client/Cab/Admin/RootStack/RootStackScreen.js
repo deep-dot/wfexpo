@@ -12,7 +12,7 @@ const RootStack = createStackNavigator();
 export const RootStackScreen = () => {
   const loading = useSelector(selectLoading);
   const admin = useSelector(selectAdmin);
-  console.log('admin in rootstack screen', loading, admin);
+ // console.log('admin in rootstack screen', loading, admin);
 
   return (
     !admin ?

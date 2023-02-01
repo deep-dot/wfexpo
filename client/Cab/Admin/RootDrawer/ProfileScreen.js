@@ -8,11 +8,13 @@ import {
   TouchableRipple,
 } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import { useSelector } from 'react-redux';
 import { AuthContext } from '../../components/context';
+import { selectAdmin } from '../slices/navSlice'
 
 const ProfileScreen = () => {
-  const { user } = React.useContext(AuthContext);
-  //console.log('profile=====',user);
+  const admin  = useSelector(selectAdmin);
+  //console.log('profile=====',admin);
   const myCustomShare = async () => {
     const shareOptions = {
       message: 'Order your next meal from FoodFinder App. I\'ve already ordered more than 10 meals on it.',
@@ -30,36 +32,36 @@ const ProfileScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
-      <View style={styles.userInfoSection}>
+      <View style={styles.adminInfoSection}>
         <View style={{ flexDirection: 'row', marginTop: 15 }}>          
-          <Avatar.Image 
+          {/* <Avatar.Image 
             source={{
-               uri: user.image,
+               uri: admin.image,
             }}
             size={80}
-          />          
+          />           */}
           <View style={{ marginLeft: 20 }}>
             <Title style={[styles.title, {
               marginTop: 15,
               marginBottom: 5,
-            }]}>{user.firstName} {user.lastName}</Title>
+            }]}>{admin.name}</Title>
             <Caption style={styles.caption}>@D_dee</Caption>
           </View>
         </View>
       </View>
 
-      <View style={styles.userInfoSection}>
+      <View style={styles.adminInfoSection}>
         <View style={styles.row}>
           <Icon name="map-marker-radius" color="#777777" size={20} />
-          <Text style={{ color: "#777777", marginLeft: 20 }}>{user.city}, {user.country}</Text>
+          <Text style={{ color: "#777777", marginLeft: 20 }}> Lara, Aus</Text>
         </View>
         <View style={styles.row}>
           <Icon name="phone" color="#777777" size={20} />
-          <Text style={{ color: "#777777", marginLeft: 20 }}>{user.phone}</Text>
+          <Text style={{ color: "#777777", marginLeft: 20 }}>123455</Text>
         </View>
         <View style={styles.row}>
           <Icon name="email" color="#777777" size={20} />
-          <Text style={{ color: "#777777", marginLeft: 20 }}>{user.email}</Text>
+          <Text style={{ color: "#777777", marginLeft: 20 }}>{admin.email}</Text>
         </View>
       </View>
 
@@ -120,7 +122,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  userInfoSection: {
+  adminInfoSection: {
     paddingHorizontal: 30,
     marginBottom: 25,
   },

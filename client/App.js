@@ -18,10 +18,10 @@ import {
 import { AuthContext } from './Cab/components/context';
 import { logout } from "./Cab/Driver/actions/driverAction";
 import { logoutUser } from "./Cab/User/actions/userAction";
-import { setAdmin, selectAdmin } from './Cab/Admin/slices/navSlice';
+import { setAdmin } from './Cab/Admin/slices/navSlice';
 
 
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { createStackNavigator } from '@react-navigation/stack';
 
 import SplashScreen from './Cab/SplashScreen';
@@ -38,9 +38,6 @@ const App = () => {
   //   profileReducer: [profileReducer, state = {}],
   // });
   // const [loginState, dispatch] = React.useReducer(rootReducerCombined, initialStateCombined);
-
-  const admin = useSelector(selectAdmin);
-  console.log('admin in app', admin);
 
   const dispatch = useDispatch();
   const [isDarkTheme, setIsDarkTheme] = React.useState(true);
@@ -68,14 +65,13 @@ const App = () => {
 
   const authContext = useMemo(() => ({
     signinAdmin: (formBody) => {
-     // console.log('signin in app screen clicked')
       try {
         axios.post(
           // `http://192.168.43.36:4000/appAuth/registerUser`,
           `http://192.168.43.36:4000/Admin/signin`,
           formBody
         ).then((res) => {
-          console.log('res in signinscreen===',res.status)
+          console.log('res in app screen===',res.status)
           if (res.status === 200) {
             dispatch(setAdmin(res.data.admin));
           } else {
@@ -145,8 +141,7 @@ const App = () => {
             },
             {
               text: "OK", onPress: async () => {
-                dispatch(setAdmin(null));
-                console.log('admin clicked');
+                dispatch(setAdmin(null));                
               }
             }
           ]

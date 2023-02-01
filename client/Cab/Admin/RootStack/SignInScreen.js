@@ -114,20 +114,7 @@ const SignInScreen = ({ navigation }) => {
             formBody.push(encodedKey + '=' + encodedValue);
         }
         formBody = formBody.join('&');
-         signinAdmin(formBody);
-        // axios.post(
-        //     // `http://192.168.43.36:4000/appAuth/registerUser`,
-        //     `http://192.168.43.36:4000/Admin/signin`,
-        //     formBody
-        // ).then((res) => {
-        //     //console.log('res in signinscreen===',res.data.admin)
-        //     if (res.status === 200) {
-        //         dispatch(setAdmin(res.data.admin));
-
-        //     } else {
-        //         setErrortext(res.msg);
-        //     }
-        // }).catch((e) => { console.log(e) });
+        signinAdmin(formBody);
     }
 
     return (

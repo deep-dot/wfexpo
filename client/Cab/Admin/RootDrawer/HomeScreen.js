@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import {
   View,
   Text,
@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
   ScrollView,
 } from 'react-native';
-import {useTheme} from '@react-navigation/native';
+import { useTheme } from '@react-navigation/native';
 
 import Swiper from 'react-native-swiper';
 // import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -17,124 +17,51 @@ import Swiper from 'react-native-swiper';
 // import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import StarRating from '../components/StarRating';
 
-import { useDispatch} from "react-redux";
+//import { useDispatch } from "react-redux";
 GOOGLE_MAPS_APIKEY = "AIzaSyCfacCZ8-nf1bwKN96-6u0KUCFre34dm9A";
 
-const HomeScreen = ({navigation}) => {
+const HomeScreen = ({ navigation }) => {
   const theme = useTheme();
-  const dispatch = useDispatch();
+ // const dispatch = useDispatch();
 
   return (
     <ScrollView style={styles.container}>
       <StatusBar barStyle={theme.dark ? 'light-content' : 'dark-content'} />
       <View style={styles.sliderContainer}>
-        <Swiper
-          autoplay
-          horizontal={false}
-          height={200}
-          activeDotColor="#FF6347">
-          <View style={styles.slide}>
-            <Image
-              // source={require('../assets/banners/food-banner1.jpg')}
-              source={{uri: 'https://i.ibb.co/cyvcpfF/uberx.png'}}
-              resizeMode="cover"
-              style={styles.sliderImage}
-            />
-          </View>
-          <View style={styles.slide}>
-            <Image
-              source={{uri: 'https://i.ibb.co/YDYMKny/uberxl.png'}}
-              resizeMode="cover"
-              style={styles.sliderImage}
-            />
-          </View>
-          <View style={styles.slide}>
-            <Image
-              source={{uri: 'https://i.ibb.co/Xx4G91m/uberblack.png'}}
-              resizeMode="cover"
-              style={styles.sliderImage}
-            />
-          </View>
-          <View style={styles.slide}>
-            <Image
-              source={{uri: 'https://i.ibb.co/1nStPWT/uberblacksuv.png'}}
-              resizeMode="cover"
-              style={styles.sliderImage}
-            />
-          </View>
-        </Swiper>
+
       </View>
 
       <View style={styles.categoryContainer}>
         <TouchableOpacity
           style={styles.categoryBtn}
           onPress={() =>
-            navigation.navigate('CardListScreen', {title: 'Restaurant'})
+            navigation.navigate('DriversListScreen', { title: 'Drivers' })
           }>
-          <View style={styles.categoryIcon}>
-            {/* <Ionicons name="ios-restaurant" size={35} color="#FF6347" /> */}
-            <Image style={{width:50, height:50}} source={{uri: 'https://i.ibb.co/Xx4G91m/uberblack.png'}}></Image>
+          <View style={styles.categoryIcon}>            
+            <Image style={{ width: 50, height: 50 }} source={{ uri: ' ' }}></Image>
           </View>
-          {/* <Text style={styles.categoryBtnTxt}>Restaurant</Text> */}
-          <Text style={styles.categoryBtnTxt}>Standard Car</Text>
+          <Text style={styles.categoryBtnTxt}>Drivers</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.categoryBtn}
           onPress={() =>
-            navigation.navigate('CardListScreen', {title: 'Fastfood Center'})
+            navigation.navigate('CardListScreen', { title: 'Fastfood Center' })
           }>
           <View style={styles.categoryIcon}>
-            {/* <MaterialCommunityIcons
-              name="food-fork-drink"
-              size={35}
-              color="#FF6347"
-            /> */}
-             <Image style={{width:50, height:50}} source={{uri: 'https://i.ibb.co/1nStPWT/uberblacksuv.png'}}></Image>
+            <Image style={{ width: 50, height: 50 }} source={{ uri: ' ' }}></Image>
           </View>
-          {/* <Text style={styles.categoryBtnTxt}>Fastfood Center</Text> */}
-          <Text style={styles.categoryBtnTxt}>SUV</Text>
+          <Text style={styles.categoryBtnTxt}>Users</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.categoryBtn} onPress={() => {}}>
+        <TouchableOpacity style={styles.categoryBtn} onPress={() => { }}>
           <View style={styles.categoryIcon}>
-            {/* <MaterialCommunityIcons name="food" size={35} color="#FF6347" /> */}
-            <Image style={{width:50, height:50}} source={{uri: 'https://i.ibb.co/YDYMKny/uberxl.png'}}></Image>            
+            <Image style={{ width: 50, height: 50 }} source={{ uri: ' ' }}></Image>
           </View>
-          {/* <Text style={styles.categoryBtnTxt}>Snacks Corner</Text> */}
-          <Text style={styles.categoryBtnTxt}>10 Seater</Text>
+          <Text style={styles.categoryBtnTxt}>Jobs</Text>
         </TouchableOpacity>
       </View>
-      {/* <View style={[styles.categoryContainer, {marginTop: 10}]}>
-        <TouchableOpacity style={styles.categoryBtn} onPress={() => {}}>
-          <View style={styles.categoryIcon}>
-            <Fontisto name="hotel" size={35} color="#FF6347" />
-          </View>
-          <Text style={styles.categoryBtnTxt}>Hotels</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.categoryBtn} onPress={() => {}}>
-          <View style={styles.categoryIcon}>
-            <Ionicons name="md-restaurant" size={35} color="#FF6347" />
-          </View>
-          <Text style={styles.categoryBtnTxt}>Dineouts</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.categoryBtn} onPress={() => {}}>
-          <View style={styles.categoryIcon}>
-            <MaterialIcons name="expand-more" size={35} color="#FF6347" />
-          </View>
-          <Text style={styles.categoryBtnTxt}>Show More</Text>
-        </TouchableOpacity>
-      </View> */}
+
 
       <View style={styles.cardsWrapper}>
-        <Text
-          style={{
-            alignSelf: 'center',
-            fontSize: 18,
-            fontWeight: 'bold',
-            color: '#333',
-          }}>
-          {/* Recently Viewed */}
-          Recently Travel
-        </Text>
         <View style={styles.card}>
           <View style={styles.cardImgWrapper}>
             {/* <Image
@@ -142,8 +69,8 @@ const HomeScreen = ({navigation}) => {
               resizeMode="cover"
               style={styles.cardImg}
             /> */}
-            <Image          
-              source={{uri: 'https://i.ibb.co/cyvcpfF/uberx.png'}}
+            <Image
+              source={{ uri: ' ' }}
               resizeMode="cover"
               style={styles.cardImg}
             />
@@ -153,48 +80,6 @@ const HomeScreen = ({navigation}) => {
             <StarRating ratings={4} reviews={99} />
             <Text style={styles.cardDetails}>
               Amazing description for this amazing service
-            </Text>
-          </View>
-        </View>
-        <View style={styles.card}>
-          <View style={styles.cardImgWrapper}>
-            {/* <Image
-              source={require('../assets/banners/food-banner3.jpg')}
-              resizeMode="cover"
-              style={styles.cardImg}
-            /> */}
-             <Image
-              source={{uri: 'https://i.ibb.co/1nStPWT/uberblacksuv.png'}}
-              resizeMode="cover"
-              style={styles.cardImg}
-            />
-          </View>
-          <View style={styles.cardInfo}>
-            <Text style={styles.cardTitle}>Awesome ride</Text>
-            <StarRating ratings={4} reviews={99} />
-            <Text style={styles.cardDetails}>
-              Amazing description for this amazing service
-            </Text>
-          </View>
-        </View>
-        <View style={styles.card}>
-          <View style={styles.cardImgWrapper}>
-            {/* <Image
-              source={require('../assets/banners/food-banner4.jpg')}
-              resizeMode="cover"
-              style={styles.cardImg}
-            /> */}
-             <Image
-              source={{uri: 'https://i.ibb.co/Xx4G91m/uberblack.png'}}
-              resizeMode="cover"
-              style={styles.cardImg}
-            />
-          </View>
-          <View style={styles.cardInfo}>
-            <Text style={styles.cardTitle}>Awesome ride</Text>
-            <StarRating ratings={4} reviews={99} />
-            <Text style={styles.cardDetails}>
-              Amazing description for this amazing ride
             </Text>
           </View>
         </View>
@@ -270,7 +155,7 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     flexDirection: 'row',
     shadowColor: '#999',
-    shadowOffset: {width: 0, height: 1},
+    shadowOffset: { width: 0, height: 1 },
     shadowOpacity: 0.8,
     shadowRadius: 2,
     elevation: 5,

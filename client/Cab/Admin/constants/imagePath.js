@@ -1,7 +1,0 @@
-export default {
-    //icCurLoc: require('../assets/images/Oval.png'),
-    // icGreenMarker: require("../assets/images/greenMarker.png"),
-    icGreenMarker: require("../assets/map_marker.png"),
-   // greenIndicator: require("../assets/images/greenIndicator.png"),
-   // icBike: require("../assets/images/bike.png"),
-}
