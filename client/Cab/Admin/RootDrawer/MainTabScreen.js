@@ -99,7 +99,7 @@ export default MainTabScreen;
 const HomeStackScreen = ({ navigation }) => {
   const { colors } = useTheme();
   const admin = useSelector(selectAdmin);
-  // console.log('maintab=====',user);
+  // console.log('maintab=====',admin);
 
   return (
     <HomeStack.Navigator

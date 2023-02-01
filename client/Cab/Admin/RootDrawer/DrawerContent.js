@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { View, StyleSheet } from 'react-native';
 import {
     useTheme,
@@ -26,7 +26,7 @@ export function DrawerContent(props) {
     console.log('admin in home screen',admin)
 
     const paperTheme = useTheme();
-    const { logoutAdmin, toggleTheme } = React.useContext(AuthContext);
+    const { logoutAdmin, toggleTheme } = useContext(AuthContext);
     return (
         <View style={{ flex: 1 }}>
             <DrawerContentScrollView {...props}>

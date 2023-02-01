@@ -5,23 +5,23 @@ const initialState = {
   admin: null,
 };
 
-export const navSlice = createSlice({
-  name: "nav",
+export const slice4admin = createSlice({
+  name: "navi",
   initialState,
   reducers: {
     setLoading: (state, action) => { state.loading = action.payload },
     setAdmin: (state, action) => { 
-      console.log(' clicked', action.payload)
+      //console.log(' clicked', action.payload)
       state.admin = action.payload
-     },
+      console.log('admin in navslice===', state.admin, state.loading)
+     },    
   },
 });
-
-export const { setLoading, setAdmin } = navSlice.actions;
+export const { setLoading, setAdmin } = slice4admin.actions;
 
 // Selectors
+//console.log('state in slice==', state)
+export const selectLoading = (state) => state.navi.loading;
+export const selectAdmin = (state) => state.navi.admin;
 
-export const selectLoading = (state) => state.nav.loading;
-export const selectAdmin = (state) => state.nav.admin;
-
-export default navSlice.reducer;
+export default slice4admin.reducer;

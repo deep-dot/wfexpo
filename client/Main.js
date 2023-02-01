@@ -2,7 +2,7 @@
 import { registerRootComponent } from 'expo';
 import { Store } from "./store";
 import { Provider } from "react-redux";
-import App from './App 2.js';
+import App from './App.js';
 
 function Main() {
   return (

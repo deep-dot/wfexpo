@@ -1,7 +1,7 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 
 // admin panel
-import navReducer4admin from "./Cab/Admin/slices/navSlice";
+import slice4admin from "./Cab/Admin/slices/navSlice";
 
 //Driver panel
 import navReducer from "./Cab/Driver/slices/navSlice";
@@ -9,7 +9,7 @@ import {
   driverReducer,
 } from "./Cab/Driver/reducers/driverReducer";
 import {
-   cabReducer,
+  cabReducer,
 } from "./Cab/Driver/reducers/cabReducer";
 
 //User panel
@@ -23,16 +23,16 @@ import {
 } from "./Cab/User/reducers/cabReducer";
 
 const reducer = combineReducers({
-  nav4admin: navReducer4admin,
+  navi: slice4admin,
 
-  nav: navReducer,
-  driver: driverReducer,
-  cab: cabReducer,
+  // navReducer,
+  // driver: driverReducer,
+  // cab: cabReducer,
 
-  nav4user: navReducer4user,
-  user: userReducer,
-  cab4user: cabReducer4user,
-  cabs4user: getAllCabsReducer4user,
+  // navReducer4user,
+  // user: userReducer,
+  // cab4user: cabReducer4user,
+  // cabs4user: getAllCabsReducer4user,
 });
 
 export const Store = configureStore({
